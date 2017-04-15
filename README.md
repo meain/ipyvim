@@ -1,4 +1,4 @@
-# ipyvimIkj
+# ipyvim
 A simple plugin that allows for one way communication from vim to a ipython instance in a tmux window.
 
 ## Setup
@@ -27,7 +27,7 @@ Just type:
 ipython
 ```
 
-** And you are good to go. **
+**And you are good to go.**
 
 ## Usage
 
