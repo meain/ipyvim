@@ -15,6 +15,7 @@ python<<_EOF_
 import vim
 import subprocess as sp
 data = vim.eval('line_for_ipython')
+data = data[0].strip('\t').strip(' ').strip('\t')
 p = sp.Popen(['tmux', 'send-keys', '-t', 'ipython:1.0', str(data), 'Enter'], stdout=sp.PIPE)
 _EOF_
 endfunction
@@ -26,9 +27,11 @@ import vim
 import time
 import subprocess as sp
 data = vim.eval('line_for_ipython').split('\n')
+# fix indentation
+unin_data_len = len(data[0]) - len(data[0].strip('\t').strip(' ').strip('\t'))
 for line in data:
-    p = sp.Popen(['tmux', 'send-keys', '-t', 'ipython:1.0', str(line), 'Enter'], stdout=sp.PIPE)
-    time.sleep(1) # tmux is kinda slow
+    p = sp.Popen(['tmux', 'send-keys', '-t', 'ipython:1.0', str(line[unin_data_len:]), 'Enter'], stdout=sp.PIPE)
+    time.sleep(1) # tmux is slow TODO: send code directly to ipython kernel
 _EOF_
 endfunction
 
