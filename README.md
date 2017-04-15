@@ -45,4 +45,4 @@ The functions used are (use it for remapping):
 
 ## TODO
 
-* Indented code inside a block will not work as it is passed without un-indenting
+* Send code directly to ipython kernel than using tmux
