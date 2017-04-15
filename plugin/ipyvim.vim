@@ -15,7 +15,7 @@ python<<_EOF_
 import vim
 import subprocess as sp
 data = vim.eval('line_for_ipython')
-data = data[0].strip('\t').strip(' ').strip('\t')
+data = data.strip('\t').strip(' ').strip('\t')
 p = sp.Popen(['tmux', 'send-keys', '-t', 'ipython:1.0', str(data), 'Enter'], stdout=sp.PIPE)
 _EOF_
 endfunction
