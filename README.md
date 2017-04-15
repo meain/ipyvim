@@ -1,6 +1,8 @@
 # ipyvim
 A simple plugin that allows for one way communication from vim to a ipython instance in a tmux window.
 
+![gif](https://media.giphy.com/media/plAlgBfz4FlMQ/giphy.gif)
+
 ## Setup
 
 ### Install this plugin using your favorite plugin manager
